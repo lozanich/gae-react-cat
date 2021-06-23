@@ -1,0 +1,10 @@
+.board__status{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.board__row:after {
+    clear: both;
+    content: "";
+    display: table;
+}

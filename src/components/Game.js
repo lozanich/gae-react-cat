@@ -61,7 +61,7 @@ export const Game = () => {
 
   return (
     <>
-      <div className="game-container">
+      <div className="game__container">
         <h1>Gato</h1>
         <hr></hr>
         <button onClick={handleRestartGame}>Reiniciar</button>
@@ -76,8 +76,7 @@ export const Game = () => {
           />
         </div>
       </div>
-      <div className="game-container">
-        {/* <ol>{moves}</ol> */}
+      <div className="game__container">
         <History history={history} jumpTo={jumpTo} />
       </div>
     </>
