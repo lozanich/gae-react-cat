@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Board } from "./Board";
+import { History } from "./History";
 
 export const Game = () => {
   const [state, setState] = useState({
@@ -46,29 +47,40 @@ export const Game = () => {
     });
   };
 
-  const moves = history.map((step, move) => {
-    const desc = move ? "Go to move #" + move : "Go to game start";
-    return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{desc}</button>
-      </li>
-    );
-  });
+  const handleRestartGame = () => {
+    setState({
+      history: [
+        {
+          squares: Array(9).fill(null),
+        },
+      ],
+      stepNumber: 0,
+      xIsNext: true,
+    });
+  };
 
   return (
-    <div className="game center">
-      <div className="game-board">
-        <Board
-          squares={current}
-          xIsNext={state.xIsNext}
-          status={status}
-          onClick={handleClickBoard}
-        />
+    <>
+      <div className="game-container">
+        <h1>Gato</h1>
+        <hr></hr>
+        <button onClick={handleRestartGame}>Reiniciar</button>
       </div>
-      <div className="game-info">
-        <ol>{moves}</ol>
+      <div className="game">
+        <div>
+          <Board
+            squares={current}
+            xIsNext={state.xIsNext}
+            status={status}
+            onClick={handleClickBoard}
+          />
+        </div>
       </div>
-    </div>
+      <div className="game-container">
+        {/* <ol>{moves}</ol> */}
+        <History history={history} jumpTo={jumpTo} />
+      </div>
+    </>
   );
 };
 
