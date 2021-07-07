@@ -4,9 +4,11 @@ export const History = ({ history, jumpTo }) => {
   const moves = history.map((step, move) => {
     const desc = move ? "Go to move #" + move : "Go to game start";
     return (
-      <li key={move}>
+      <div key={move} className="container__vertical">
         <div className="history__margin">
-          <button onClick={() => jumpTo(move)}>{desc}</button>
+          <button className="btn btn-success" onClick={() => jumpTo(move)}>
+            {desc}
+          </button>
         </div>
         <div className="history__margin">
           {step.squares.map((item, index) => {
@@ -20,13 +22,9 @@ export const History = ({ history, jumpTo }) => {
             );
           })}
         </div>
-      </li>
+      </div>
     );
   });
 
-  return (
-    <>
-      <ol>{moves}</ol>
-    </>
-  );
+  return <>{moves}</>;
 };

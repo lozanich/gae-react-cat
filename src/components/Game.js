@@ -64,7 +64,9 @@ export const Game = () => {
       <div className="game__container">
         <h1>Gato</h1>
         <hr></hr>
-        <button onClick={handleRestartGame}>Reiniciar</button>
+        <button className="btn btn-primary" onClick={handleRestartGame}>
+          Reiniciar
+        </button>
       </div>
       <div className="game">
         <div>

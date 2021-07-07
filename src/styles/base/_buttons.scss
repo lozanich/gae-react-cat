@@ -1,0 +1,47 @@
+.btn{
+     background-color: transparent;
+     border:none;
+     color: white;
+     cursor: pointer;
+     font-size: 16px;
+     padding:7px 10px 7px 10px;
+
+     &:focus {
+         outline: none;
+     }
+
+     transition: color .3s ease;
+
+     &:hover {
+         color: darken($color: white, $amount: 20);
+     }
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-radius: 17px;
+
+    &:disabled {
+        background-color: lighten($color:$primary, $amount: 15);
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        background-color: darken($color:$primary, $amount: 15);
+    }
+}
+
+.btn-success {
+    background-color: $success;
+    border-radius: 17px;
+
+    &:disabled {
+        background-color: lighten($color:$success, $amount: 15);
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        background-color: darken($color:$success, $amount: 15);
+    }
+}
+

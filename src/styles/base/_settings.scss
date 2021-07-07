@@ -1,3 +1,20 @@
 // Colors
 
-$primary: blue;
+$primary: #0069d9;
+$light-gray: #6c757d;
+$success: #28a745;
+$danger:#dc3545;
+$warning: #ffc107;
+$light-blue: #17a2b8;
+$dark-gray: #343a40;
+
+
+.container__horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.container__vertical{
+    display: flex;
+    flex-direction: column;
+}
